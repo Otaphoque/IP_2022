@@ -5,6 +5,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import pack.Model.CustomRadioButton;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 public class View1 extends Pane implements iView {
     static RadioButton twoo= new CustomRadioButton("2 x 2");
@@ -14,7 +15,8 @@ public class View1 extends Pane implements iView {
     //Graph graph = new Graph();
 
     public View1() {
-        Pane p=iView.setLeft(twoo,threee,iView.set2Fields(),set3Fields(3,7,b),setRadios(twoo,threee));
+
+        Pane p=iView.setLeft(twoo,threee,iView.set2Fields(a),set3Fields(3,7,b),setRadios(twoo,threee));
         this.getChildren().add(setView("System of Linear Equations",p));
         CustomButton.handleSButton(1);
     }
