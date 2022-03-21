@@ -50,5 +50,4 @@ public class main extends Application {
      * LayoutX : 805 pixels
      * LayoutY : 610 pixels
      */
-
 }
