@@ -11,6 +11,8 @@ import pack.Model.CustomButton;
 
 import static pack.Model.mainModel.p;
 
+// TODO Make the buttons centered
+
 public class WelcomeView extends Pane {
 
     MainView main;
