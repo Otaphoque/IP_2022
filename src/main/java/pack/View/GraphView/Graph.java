@@ -253,7 +253,7 @@ public class Graph extends Group {
 
     public void addPlane(Point3D point1, Point3D point2, Point3D point3, String equation) {
 
-        Rectangle rectangle = new Rectangle(1000, 1000);
+        Circle rectangle = new Circle(500);
 
         Point3D triangleCenter = this.getCenter(point1, point2, point3);
         double newX = triangleCenter.getX();
@@ -269,10 +269,10 @@ public class Graph extends Group {
         double angleZ = Math.toDegrees(Math.atan(point1.getY() / point1.getX()));
         Rotate rotateZ = new Rotate(angleZ, Rotate.Z_AXIS);
 
-        //rectangle.getTransforms().add(new Translate(newX, newY, newZ));
+        rectangle.getTransforms().add(new Translate(newX, newY, newZ));
         rectangle.getTransforms().addAll(rotateX, rotateY, rotateZ);
-        rectangle.setTranslateX(500);
-        rectangle.setTranslateY(500);
+//        rectangle.setTranslateX(500);
+//        rectangle.setTranslateY(500);
 
         this.addPlaneToList(rectangle);
         this.createPlaneLabel(triangleCenter, equation);
@@ -328,7 +328,7 @@ public class Graph extends Group {
         }
     }
 
-    public void addPlaneToList(Rectangle rectangle) {
+    public void addPlaneToList(Circle rectangle) {
         rectangle.setOpacity(0.5);
         thingsToGraphList.add(rectangle);
         switch (thingsToGraphList.size()) {
@@ -420,4 +420,3 @@ public class Graph extends Group {
 //    Text text = new Text(0, 0,
 //            String.format("(%1$d,%2$d,%3$d)", x, y,z));
 //                    text.setScaleY(-1);
-
